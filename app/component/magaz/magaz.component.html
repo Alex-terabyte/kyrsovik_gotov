@@ -1,0 +1,76 @@
+<div class="container">
+  <br>
+
+<link href="https://fonts.googleapis.com/css?family=Cuprum&display=swap" rel="stylesheet">
+
+
+
+  <h5>Выберите автомобиль</h5>
+  <button1 type="btn btn-danger"
+   (click)="carSelect('bmw')">BMW</button1>
+  <button2 type="btn btn-success"
+   (click)="carSelect('audi') ">Audi</button2>
+  <button3 type="btn btn-info"
+   (click)="carSelect('mer')"> Mersedes</button3>
+   <div>
+     <br>
+   </div>
+
+  <h4><mark>Автомобиль</mark> {{name}}
+  <small>{{model}}</small></h4>
+  <div class="alert alert-success">
+    Характеристики автомобиля:
+    <ul>
+      <li>Стоимость : <strong>{{prise}}</strong>руб</li>
+      <li>Скорость: <strong>{{speed}}</strong> км</li>
+      <li>Цвет авто: <strong>{{colors.car}}</strong></li>
+      <li>Цвет салона: <strong>{{colors.salon}}</strong></li>
+      <li>Цвет колес: <strong>{{colors.wheels}}</strong></li>
+    </ul>
+  </div>
+
+<h5>Редактирование объекта</h5>
+<button class="btn btn-danger"
+(click)="showEdit()">Редактировать</button>
+<div>
+  <br>
+</div>
+<form *ngIf=isEdit>
+  <div class="form-group">
+    <input type="text" placeholder="Название машины"
+    class="form-control" [(ngModel)]="name" name="name"><br>
+    <input type="text" placeholder="Модель машины"
+    class="form-control"[(ngModel)]="model" name="model"><br>
+    <input type="namber" placeholder="Стоимость"
+    class="form-control"[(ngModel)]="prise" name="prise"><br>
+    <input type="namber" placeholder="Скорость"
+    class="form-control"[(ngModel)]="speed" name="speed"><br>
+    <input type="text" placeholder="Цвет авто"
+    class="form-control"[(ngModel)]="colors.car" name="car"><br>
+    <input type="text" placeholder="Цвет салона"
+    class="form-control"[(ngModel)]="colors.salon" name="salon"><br>
+    <input type="text" placeholder="Цвет колес"
+    class="form-control"[(ngModel)]="colors.wheels" name="wheels"><br>
+    </div>
+</form>
+
+<h5>Возможности автомобиля</h5>
+<form (submit)="addOpt(option.value)">
+  <div class="form-group">
+    <label for="option">Добавление новой возможности</label>
+    <input type="text" id="option"placeholder="Введите опцию"
+     class="form-control" #option>
+    <br>
+    <button type="submit" class="btn
+    btn-outline-success">Добавить</button>
+  </div>
+</form>
+<div class="alert alert-success">
+  <ul>
+    <li *ngFor="let opt of options">
+      {{opt}}<button class="btn btn-warning btn-sm"
+      (click)="deleteOpt(opt)">X</button></li>
+  </ul>
+</div>
+
+</div>

@@ -1,0 +1,42 @@
+nav{
+  position: fixed, center;
+  height: 100%;
+  background-image: url(1.jpg);
+}
+
+header{
+  position: fixed, center;
+  margin-top: auto;
+  font-family: serif;
+}
+
+
+.content{
+ background-position: 50% 0%;
+ background-repeat: no-repeat;
+ border-width: 1px;background-image: url(//media.lpgenerator.ru/images/243663/2_39VwohA.jpg#size_2650x720);
+ capture: on;
+ container: on;
+ background-size: cover;
+ height: 720px;
+ width: 100%;
+ z-index: 1;
+ parallax: on;
+ background-attachment: fixed;
+ fullcover: on;anchor-id: #block-new5;
+ left: 0;
+ top: 30;
+ opacity: NaN;
+}
+
+p{
+  margin: auto;
+  position: absolute;
+  top: 40%;
+  right: 25%;
+  color:#FFFFFF;
+  font-size:62px;
+  font-weight:700;
+  text-transform: uppercase;
+  font-family:ubuntu,sans-serif;
+}
